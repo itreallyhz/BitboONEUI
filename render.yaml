@@ -1,0 +1,7 @@
+# # render.yaml
+
+buildCommand: |
+  poetry install
+  python manage.py collectstatic --noinput
+
+startCommand: gunicorn myapp.wsgi -b 0.0.0.0:$PORT
